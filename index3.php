@@ -10,14 +10,6 @@
             max-width: 500px;
             margin: auto;
             padding: 30px;
-            background-color: #F5F5F5;
-        }
-
-        form {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         label {
@@ -32,8 +24,6 @@
             margin-bottom: 20px;
             padding: 5px 10px;
             font-size: 16px;
-            border: 1px solid #DDD;
-            border-radius: 5px;
         }
 
         input[type="submit"] {
@@ -79,6 +69,7 @@
             } else if (date.getDate() !== day) {
                 errorMessage = "วันไม่ถูกต้อง: " + day;
             }
+
             if (errorMessage) {
                 errorMessage += "\nกรุณาเช็ควันให้ถูกต้องเพราะวันที่ " + day + " ไม่มีในเดือน " + thaiMonths[month - 1];
                 alert(errorMessage);
@@ -87,6 +78,7 @@
             return true;
         }
     </script>
+
 </head>
 
 <body>
@@ -105,6 +97,7 @@
                 <option value="<?php echo $index + 1; ?>"><?php echo $monthName; ?></option>
             <?php endforeach; ?>
         </select>
+
         <label for="year">ปี ค.ศ:</label>
         <input type="number" name="year" id="year" min="1900" max="2100" required>
         <input type="submit" value="Submit">
@@ -136,6 +129,7 @@
             $thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
             return $thaiMonths[$this->month - 1];
         }
+
         public function __toString()
         {
             return $this->getWeekday() . " ที่ " . $this->day . " " . $this->getThaiMonth() . " ค.ศ. " . $this->year;
@@ -151,6 +145,7 @@
     }
 
     ?>
+
 </body>
 
 </html>
